@@ -1,0 +1,56 @@
+{
+  "name": "@dlytle/react-component-generator",
+  "version": "1.0.0",
+  "description": "A personal set of generators for creating React components",
+  "keywords": [
+    "node",
+    "typescript",
+    "eslint",
+    "prettier",
+    "vitest",
+    "react",
+    "plop",
+    "plopjs"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Drew Lytle",
+    "email": "contact@drewis.cool",
+    "url": "https://drewis.cool"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "build": "tsc && cp -R ./src/templates ./dist",
+    "dev": "nodemon -w *.ts -e ts -x ts-node --files -H -T ./src/index.ts",
+    "lint": "eslint --ext .js,.ts .",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    "test": "vitest --passWithNoTests",
+    "plop": "plop"
+  },
+  "dependencies": {
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "nodemon": "^2.0.20",
+    "plop": "^3.1.1",
+    "prettier": "^2.7.1",
+    "ts-node": "^10.9.1",
+    "vite": "^3.2.3",
+    "vite-tsconfig-paths": "^3.5.2",
+    "vitest": "^0.25.2"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "publishConfig": {
+    "cache": ".npm"
+  }
+}
